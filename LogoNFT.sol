@@ -8,7 +8,7 @@ contract LogoNFT is ERC721URIStorage, Ownable {
     bool private minted;
 
     constructor() ERC721("LogoNFT", "LOGO") Ownable(msg.sender) {
-        // msg.sender = deploy eden adres
+        // msg.sender = address that deploys the contract
     }
 
     function mint(string memory tokenURI) public onlyOwner {
@@ -20,3 +20,4 @@ contract LogoNFT is ERC721URIStorage, Ownable {
         minted = true;
     }
 }
+
