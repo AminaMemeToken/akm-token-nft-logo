@@ -17,7 +17,7 @@ contract AminaMemeToken is ERC20Burnable, Ownable {
         _mint(msg.sender, 850_000_000_000 * 10 ** decimals());
     }
 
-    // Bu fonksiyon artık override edilmedi, farklı şekilde yakım/ödül yapılabilir.
+// This function is no longer overridden; burn/reward logic can be handled separately.
     function transferWithFee(address to, uint256 amount) external returns (bool) {
         uint256 fee = (amount * TRANSFER_FEE) / 100;
         uint256 burnPart = fee / 2;
@@ -31,3 +31,4 @@ contract AminaMemeToken is ERC20Burnable, Ownable {
         return true;
     }
 }
+
